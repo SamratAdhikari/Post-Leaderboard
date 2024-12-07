@@ -1,0 +1,44 @@
+name: Hit GraphAPI every hour
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"  # Runs once every hour
+
+jobs:
+  trigger_api:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Set environment variables
+      - name: Set environment variables
+        run: echo "API_TOKEN=${{ secrets.API_TOKEN }}" >> $GITHUB_ENV
+        run: echo "NEXT_PUBLIC_PAGE_ID=${{ secrets.NEXT_PUBLIC_PAGE_ID }}" >> $GITHUB_ENV
+
+      # Step 5: Run the fetch data script
+      - name: Fetch data from Graph API
+        run: node api/fetchData/route.js
+
+      # Optional: Commit and push the updated data.json to GitHub (if you want to keep the data in the repository)
+      - name: Commit and push updated data.json
+        run: |
+          git config --global user.name 'SamratAdhikari'
+          git config --global user.email 'samratmetaladhikari@gmail.com'
+          git add public/data.json
+          git commit -m 'Update data.json with new posts data'
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
