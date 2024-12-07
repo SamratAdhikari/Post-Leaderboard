@@ -2,12 +2,30 @@
 
 import Typewriter from "typewriter-effect";
 import CardWidget from "./components/CardWidget/CardWidget";
-import { useState } from "react";
-
-import data from "../app/data/data.json";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-    const [posts, setPosts] = useState(data.posts);
+    const [posts, setPosts] = useState([]);
+    const DATA_URL =
+        "https://samratadhikari.github.io/Post-Leaderboard/data.json";
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(DATA_URL);
+                if (response.ok) {
+                    const data = await response.json();
+                    setPosts(data.posts);
+                } else {
+                    console.error("Failed to fetch data:", response.statusText);
+                }
+            } catch (error) {
+                console.error("Error fetching data:", error.message);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     return (
         <div className="flex flex-col justify-center items-center min-h-screen sm:px-8 font-[family-name:var(--font-geist-sans)] gap-12">
