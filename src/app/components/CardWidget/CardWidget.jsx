@@ -12,7 +12,7 @@ const CardWidget = (props) => {
 
     return (
         <div
-            className="relative w-full sm:w-[300px] m-8 md:w-[330px] lg:w-[400px] h-auto shadow-lg rounded-lg hover:cursor-pointer hover:shadow-2xl"
+            className="relative w-full sm:w-[300px] m-8 md:w-[330px] lg:w-[400px] h-auto shadow-md rounded-lg hover:cursor-pointer hover:shadow-2xl"
             onClick={() => {
                 window.open(props.PostLink, "_blank");
             }}
