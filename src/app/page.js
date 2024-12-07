@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
     const [posts, setPosts] = useState([]);
-    const DATA_URL = "/data.json";
+    const DATA_URL =
+        "https://samratadhikari.github.io/Post-Leaderboard/data.json";
 
     useEffect(() => {
         const fetchData = async () => {
