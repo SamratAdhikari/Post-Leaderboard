@@ -5,7 +5,8 @@ import path from "path";
 async function fetchDataAndUpdate() {
     const PAGE_ACCESS_TOKEN = process.env.API_TOKEN;
     const PAGE_ID = process.env.NEXT_PUBLIC_PAGE_ID;
-    const DATA_FILE_PATH = path.resolve(process.cwd(), "public/data.json");
+
+    const DATA_FILE_PATH = path.join(__dirname, "../../public/data.json");
 
     try {
         // Fetch new data from Facebook API
