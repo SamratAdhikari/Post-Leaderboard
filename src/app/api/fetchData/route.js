@@ -58,15 +58,10 @@ async function fetchDataAndUpdate() {
         // Sort the posts by points
         const sortedPosts = filteredPosts.sort((a, b) => b.Points - a.Points);
 
-        // Prepare data for saving to the file
-        const updatedData = {
-            posts: sortedPosts,
-        };
-
         // Save new data to file
         await fs.writeFile(
             DATA_FILE_PATH,
-            JSON.stringify(updatedData, null, 2),
+            JSON.stringify({ posts: sortedPosts }, null, 2),
             "utf-8"
         );
         console.log("Data updated successfully.");
