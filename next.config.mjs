@@ -1,7 +1,3 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    output: "export",
-    reactStrictMode: true,
-};
-
-export default nextConfig;
+export const output = "export";
+export const basePath = "/Post_Leaderboard";
+export const assetPrefix = "/Post_Leaderboard";
