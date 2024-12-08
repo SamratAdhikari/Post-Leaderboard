@@ -5,11 +5,11 @@ on:
         - cron: "*/10 * * * *" # Runs every 30 minutes
 
 permissions:
-    contents: write # Grants read/write access to repository contents
-    pages: write # Allows deploying to GitHub Pages
+    contents: write
+    pages: write
 
 jobs:
-    trigger_api:
+    update_and_deploy:
         runs-on: ubuntu-latest
 
         steps:
@@ -21,7 +21,7 @@ jobs:
             - name: Set up Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: "16"
+                  node-version: "^19.8.0"
 
             # Step 3: Install dependencies
             - name: Install dependencies
@@ -51,9 +51,15 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-            # Step 6: Deploy to GitHub Pages
+            # Step 6: Build the Next.js app
+            - name: Build the site
+              run: |
+                  npm run build
+                  npm run export
+
+            # Step 7: Deploy to GitHub Pages
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./public
+                  publish_dir: ./out
