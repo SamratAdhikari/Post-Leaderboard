@@ -1,6 +1,10 @@
-import axios from "axios";
-import fs from "fs/promises";
-import path from "path";
+// import axios from "axios";
+// import fs from "fs/promises";
+// import path from "path";
+
+const axios = require("axios");
+const fs = require("fs/promises");
+const path = require("path");
 
 async function fetchDataAndUpdate() {
     const PAGE_ACCESS_TOKEN = process.env.API_TOKEN;
