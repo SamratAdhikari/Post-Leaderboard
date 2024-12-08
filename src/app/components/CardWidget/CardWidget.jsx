@@ -1,5 +1,11 @@
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
-import { MessageCircleMore, Quote, Share2, ThumbsUp } from "lucide-react";
+import {
+    Crown,
+    MessageCircleMore,
+    Quote,
+    Share2,
+    ThumbsUp,
+} from "lucide-react";
 import CardStats from "../CardStats/CardStats";
 
 const CardWidget = (props) => {
@@ -20,6 +26,7 @@ const CardWidget = (props) => {
             {/* Crown Icon */}
             {props.rank <= 3 && (
                 <div className="absolute -top-3 -right-3 bg-white p-1 rounded-full shadow-lg z-10">
+                    {/* <Crown className={`h-12 w-12 bg-[${props.rank}]`} /> */}
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 640 512"
