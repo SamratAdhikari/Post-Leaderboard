@@ -53,7 +53,7 @@ jobs:
 
             # Step 6: Build and export the site
             - name: Build and export the Next.js app
-              run: npm run build
+              run: npm run export
 
             # Step 7: Deploy to GitHub Pages
             - name: Deploy to GitHub Pages
