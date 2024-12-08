@@ -2,7 +2,7 @@ name: Hit GraphAPI every hour
 
 on:
     schedule:
-        - cron: "*/2 * * * *" # Runs every 30 minutes
+        - cron: "*/6 * * * *" # Runs every 30 minutes
 
 permissions:
     contents: write # Grants read/write access to repository contents
