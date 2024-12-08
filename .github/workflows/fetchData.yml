@@ -40,7 +40,7 @@ jobs:
             - name: Fetch data from Graph API
               run: node src/app/utils/fetchData/route.js
 
-            # Optional: Commit and push the updated data.json to GitHub (if you want to keep the data in the repository)
+            # Optional: Commit and push the updated data.json to GitHub
             - name: Commit and push updated data.json
               run: |
                   git config --global user.name 'SamratAdhikari'
@@ -51,11 +51,9 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-            # Step 6: Build the Next.js app
-            - name: Build the site
-              run: |
-                  npm run build
-                  npm run export
+            # Step 6: Build and export the site
+            - name: Build and export the Next.js app
+              run: npm run build
 
             # Step 7: Deploy to GitHub Pages
             - name: Deploy to GitHub Pages
