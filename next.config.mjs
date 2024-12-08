@@ -2,8 +2,8 @@
 const nextConfig = {
     output: "export", // Enable static export
     reactStrictMode: true,
-    basePath: "/Post-Leaderboard", // Replace 'your-repo-name' with your GitHub repository name
-    assetPrefix: "/Post-Leaderboard", // Ensure assets are correctly prefixed
+    basePath: "/Post-Leaderboard",
+    assetPrefix: "/Post-Leaderboard/",
 };
 
 export default nextConfig;
