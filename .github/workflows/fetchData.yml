@@ -33,7 +33,6 @@ jobs:
                   echo "API_TOKEN=${{ env.API_TOKEN }}" >> $GITHUB_ENV
                   echo "NEXT_PUBLIC_PAGE_ID=${{ env.NEXT_PUBLIC_PAGE_ID }}" >> $GITHUB_ENV
                   echo "NEXT_PUBLIC_DATA_URL=${{ env.NEXT_PUBLIC_DATA_URL }}" >> $GITHUB_ENV
-                  echo "NEXT_PUBLIC_DATA_URL=${{ secrets.NEXT_PUBLIC_DATA_URL }}" >> $GITHUB_ENV
               env:
                   API_TOKEN: ${{ secrets.API_TOKEN }}
                   NEXT_PUBLIC_PAGE_ID: ${{ secrets.NEXT_PUBLIC_PAGE_ID }}
