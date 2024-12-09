@@ -38,7 +38,7 @@ jobs:
 
             # Step 5: Run the fetch data script
             - name: Fetch data from Graph API
-              run: node src/app/utils/fetchData/route.js
+              run: node src/app/api/fetchData/route.js
 
             # Optional: Commit and push the updated data.json to GitHub
             - name: Commit and push updated data.json
