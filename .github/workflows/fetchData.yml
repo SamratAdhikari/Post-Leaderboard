@@ -2,7 +2,7 @@ name: Update Data and Deploy to GitHub Pages
 
 on:
     schedule:
-        - cron: "*/45 * * * *" # Runs every 30 minutes
+        - cron: "*/45 * * * *" # Runs every 45 minutes
 
 permissions:
     contents: write
@@ -52,14 +52,3 @@ jobs:
                   git push
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-            # # Step 6: Build and export the site
-            # - name: Build and export the Next.js app
-            #   run: next build && next export
-
-            # # Step 7: Deploy to GitHub Pages
-            # - name: Deploy to GitHub Pages
-            #   uses: peaceiris/actions-gh-pages@v3
-            #   with:
-            #       github_token: ${{ secrets.GITHUB_TOKEN }}
-            #       publish_dir: ./out
