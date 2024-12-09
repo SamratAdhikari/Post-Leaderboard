@@ -1,63 +1,63 @@
-# name: Update Data and Deploy to GitHub Pages
+name: Update Data and Deploy to GitHub Pages
 
-# on:
-#     schedule:
-#         - cron: "*/10 * * * *" # Runs every 30 minutes
+on:
+    schedule:
+        - cron: "*/10 * * * *" # Runs every 30 minutes
 
-# permissions:
-#     contents: write
-#     pages: write
+permissions:
+    contents: write
+    pages: write
 
-# jobs:
-#     update_and_deploy:
-#         runs-on: ubuntu-latest
+jobs:
+    update_and_deploy:
+        runs-on: ubuntu-latest
 
-#         steps:
-#             # Step 1: Checkout the repository
-#             - name: Checkout code
-#               uses: actions/checkout@v3
+        steps:
+            # Step 1: Checkout the repository
+            - name: Checkout code
+              uses: actions/checkout@v3
 
-#             # Step 2: Set up Node.js
-#             - name: Set up Node.js
-#               uses: actions/setup-node@v3
-#               with:
-#                   node-version: "^18.x"
+            # Step 2: Set up Node.js
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "^18.x"
 
-#             # Step 3: Install dependencies
-#             - name: Install dependencies
-#               run: npm install
+            # Step 3: Install dependencies
+            - name: Install dependencies
+              run: npm install
 
-#             # Step 4: Set environment variables
-#             - name: Set environment variables
-#               run: |
-#                   echo "API_TOKEN=${{ env.API_TOKEN }}" >> $GITHUB_ENV
-#                   echo "NEXT_PUBLIC_PAGE_ID=${{ env.NEXT_PUBLIC_PAGE_ID }}" >> $GITHUB_ENV
-#               env:
-#                   API_TOKEN: ${{ secrets.API_TOKEN }}
-#                   NEXT_PUBLIC_PAGE_ID: ${{ secrets.NEXT_PUBLIC_PAGE_ID }}
+            # Step 4: Set environment variables
+            - name: Set environment variables
+              run: |
+                  echo "API_TOKEN=${{ env.API_TOKEN }}" >> $GITHUB_ENV
+                  echo "NEXT_PUBLIC_PAGE_ID=${{ env.NEXT_PUBLIC_PAGE_ID }}" >> $GITHUB_ENV
+              env:
+                  API_TOKEN: ${{ secrets.API_TOKEN }}
+                  NEXT_PUBLIC_PAGE_ID: ${{ secrets.NEXT_PUBLIC_PAGE_ID }}
 
-#             # Step 5: Run the fetch data script
-#             - name: Fetch data from Graph API
-#               run: node src/app/utils/fetchData/route.js
+            # Step 5: Run the fetch data script
+            - name: Fetch data from Graph API
+              run: node src/app/utils/fetchData/route.js
 
-#             # Optional: Commit and push the updated data.json to GitHub
-#             - name: Commit and push updated data.json
-#               run: |
-#                   git config --global user.name 'SamratAdhikari'
-#                   git config --global user.email 'samratmetaladhikari@gmail.com'
-#                   git add public/data.json
-#                   git commit -m 'Update data.json with new posts data'
-#                   git push
-#               env:
-#                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            # Optional: Commit and push the updated data.json to GitHub
+            - name: Commit and push updated data.json
+              run: |
+                  git config --global user.name 'SamratAdhikari'
+                  git config --global user.email 'samratmetaladhikari@gmail.com'
+                  git add public/data.json
+                  git commit -m 'Update data.json with new posts data'
+                  git push
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-#             # Step 6: Build and export the site
-#             - name: Build and export the Next.js app
-#               run: next build && next export
+            # # Step 6: Build and export the site
+            # - name: Build and export the Next.js app
+            #   run: next build && next export
 
-#             # Step 7: Deploy to GitHub Pages
-#             - name: Deploy to GitHub Pages
-#               uses: peaceiris/actions-gh-pages@v3
-#               with:
-#                   github_token: ${{ secrets.GITHUB_TOKEN }}
-#                   publish_dir: ./out
+            # # Step 7: Deploy to GitHub Pages
+            # - name: Deploy to GitHub Pages
+            #   uses: peaceiris/actions-gh-pages@v3
+            #   with:
+            #       github_token: ${{ secrets.GITHUB_TOKEN }}
+            #       publish_dir: ./out
