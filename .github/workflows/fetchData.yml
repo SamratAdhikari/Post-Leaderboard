@@ -2,7 +2,7 @@ name: Update Data and Deploy to GitHub Pages
 
 on:
     schedule:
-        - cron: "*/45 * * * *" # Runs every 45 minutes
+        - cron: "0 * * * *" # Runs every hour
 
 permissions:
     contents: write
