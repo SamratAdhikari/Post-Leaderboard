@@ -39,11 +39,10 @@ const CardWidget = (props) => {
             <Card className="w-full h-full rounded-lg overflow-hidden">
                 {/* Card Header */}
                 <CardHeader className="pb-0 pt-4 px-6 flex-col items-start">
-
                     {/* Author */}
                     <div className="text-sm uppercase text-gray-500 flex items-center mb-2">
                         <CircleUserRound className="mr-2" />{" "}
-                        <span className="font-semibold font-khand">
+                        <span className="font-semibold">
                             {/* Added margin to space out the logo */}
                             {props.Author}
                         </span>
