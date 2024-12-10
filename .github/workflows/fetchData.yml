@@ -2,7 +2,7 @@ name: Update Data and Deploy to GitHub Pages
 
 on:
     schedule:
-        - cron: "*/45 * * * *" # Runs every 45 minutes
+        - cron: "0 * * * *" # Runs every 45 minutes
 
 permissions:
     contents: write
@@ -49,6 +49,6 @@ jobs:
                   git config --global user.email 'samratmetaladhikari@gmail.com'
                   git add public/data.json
                   git commit -m 'Update data.json with new posts data'
-                  git push
+                  git push -f
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
