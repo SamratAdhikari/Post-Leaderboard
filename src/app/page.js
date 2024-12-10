@@ -6,6 +6,12 @@ import Header from "./components/Header/Header";
 import Subheader from "./components/Subheader/Subheader";
 import Footer from "./components/Footer/Footer";
 
+<link
+    rel="icon"
+    type="image/x-icon"
+    href="/Post-Leaderboard/assets/favicon.ico"
+></link>;
+
 export default function Home() {
     const [posts, setPosts] = useState([]);
     const DATA_URL =

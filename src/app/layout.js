@@ -20,7 +20,7 @@ const khand = Khand({
 });
 
 export const metadata = {
-    title: "Post Progress Tracker",
+    title: "Leaderboard",
     description: "AI Photography Post Engagement Tracker",
 };
 
