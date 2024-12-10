@@ -1,6 +1,5 @@
 "use client";
 
-import Typewriter from "typewriter-effect";
 import CardWidget from "./components/CardWidget/CardWidget";
 import { useEffect, useState } from "react";
 import Header from "./components/Header/Header";
@@ -40,7 +39,7 @@ export default function Home() {
             </div>
 
             {/* Cards Section */}
-            <div className="w-full sm:w-[95%] flex flex-wrap justify-center">
+            <div className="w-full sm:w-[95%] md:w-[90%] lg:w-[90%] flex flex-wrap justify-center">
                 {posts.length > 0
                     ? posts.map((post, index) => (
                           <CardWidget key={index} {...post} rank={index + 1} />
