@@ -39,6 +39,7 @@ const CardWidget = (props) => {
             <Card className="w-full h-full rounded-lg overflow-hidden">
                 {/* Card Header */}
                 <CardHeader className="pb-0 pt-4 px-6 flex-col items-start">
+
                     {/* Author */}
                     <div className="text-sm uppercase text-gray-500 flex items-center mb-2">
                         <CircleUserRound className="mr-2" />{" "}
@@ -47,6 +48,8 @@ const CardWidget = (props) => {
                             {props.Author}
                         </span>
                     </div>
+
+                    {/* Caption */}
                     <h4 className="font-khand font-bold text-xl flex items-start gap-2 line-clamp-2 max-h-[3.5em] overflow-hidden">
                         <Quote className="self-start h-6 shrink-0 text-gray-400 transform scale-x-[-1]" />
                         <span className="line-clamp-2">{props.Text}</span>

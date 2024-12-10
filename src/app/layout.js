@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
             <Head>
                 <link
                     rel="icon"
-                    href="/Post-Leaderboard/favicon.ico"
+                    href={path.resolve(process.cwd(), "public/favicon.ico")}
                     type="image/x-icon"
                 />
             </Head>
