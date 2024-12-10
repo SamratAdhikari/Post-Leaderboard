@@ -39,7 +39,15 @@ const CardWidget = (props) => {
             <Card className="w-full h-full rounded-lg overflow-hidden">
                 {/* Card Header */}
                 <CardHeader className="pb-0 pt-4 px-6 flex-col items-start">
-                    <h4 className="font-khand font-bold text-lg flex items-start gap-2 line-clamp-2 max-h-[3.5em] overflow-hidden">
+                    {/* Author */}
+                    <div className="text-sm uppercase text-gray-500 flex items-center mb-2">
+                        <CircleUserRound className="mr-2" />{" "}
+                        <span className="font-semibold font-khand">
+                            {/* Added margin to space out the logo */}
+                            {props.Author}
+                        </span>
+                    </div>
+                    <h4 className="font-khand font-bold text-xl flex items-start gap-2 line-clamp-2 max-h-[3.5em] overflow-hidden">
                         <Quote className="self-start h-6 shrink-0 text-gray-400 transform scale-x-[-1]" />
                         <span className="line-clamp-2">{props.Text}</span>
                     </h4>
@@ -58,31 +66,23 @@ const CardWidget = (props) => {
 
                 {/* Card Footer with stats */}
                 <div className="px-6 pb-4 flex flex-wrap justify-around items-center text-gray-600">
-                    {/* Card stats */}
-                    <div className="flex flex-grow justify-between items-center">
-                        <CardStats
-                            icon={<ThumbsUp />}
-                            count={props.NumberOfReactions}
-                            color={"#1881aa"}
-                        />
-                        <CardStats
-                            icon={<Share2 />}
-                            count={props.NumberOfShares}
-                            color={"#29a06e"}
-                        />
+                    <CardStats
+                        icon={<ThumbsUp />}
+                        count={props.NumberOfReactions}
+                        color={"#1881aa"}
+                    />
+                    <CardStats
+                        icon={<Share2 />}
+                        count={props.NumberOfShares}
+                        color={"#29a06e"}
+                    />
+                    <div className="flex justify-center items-center gap-1 text-[#EB5353]">
                         <CardStats
                             icon={<Dot />}
                             count={props.Points}
                             color={"#EB5353"}
-                        />
-
-                        <div className="text-base uppercase text-gray-500 flex items-center">
-                            <CircleUserRound className="mr-2" />{" "}
-                            <span className="font-semibold font-khand">
-                                {/* Added margin to space out the logo */}
-                                {props.Author}
-                            </span>
-                        </div>
+                        />{" "}
+                        Points
                     </div>
                 </div>
             </Card>

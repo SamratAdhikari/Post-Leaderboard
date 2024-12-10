@@ -28,13 +28,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <Head>
+            {/* <Head>
                 <link
                     rel="icon"
-                    href="/Post-Leaderboard/assets/favicon.ico"
+                    href="/assets/favicon.ico"
                     type="image/x-icon"
                 />
-            </Head>
+            </Head> */}
             <body
                 className={`${geistSans.variable} ${geistMono.variable} ${khand.variable} antialiased`}
             >

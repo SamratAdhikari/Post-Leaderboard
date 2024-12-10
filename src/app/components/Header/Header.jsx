@@ -21,7 +21,7 @@ const Header = () => {
                 />
             </div>
 
-            <p className="text-xs sm:text-xs md:sm lg:text-sm text-gray-600">
+            <p className="text-xs sm:text-xs md:text-sm lg:text-sm text-gray-600">
                 Developed and Maintained by
                 <span className="font-semibold"> KEC Computer Club</span>
             </p>
