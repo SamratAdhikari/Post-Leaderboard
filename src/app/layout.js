@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import Head from "next/head"; // Importing Head component
 import { Khand } from "next/font/google";
 import "./globals.css";
 
@@ -27,6 +28,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
+            <Head>
+                <link
+                    rel="icon"
+                    href="/Post-Leaderboard/favicon.ico?"
+                    type="image/x-icon"
+                />
+            </Head>
+
             <body
                 className={`${geistSans.variable} ${geistMono.variable} ${khand.variable} antialiased`}
             >
