@@ -13,7 +13,7 @@ const Header = () => {
                 />
                 <div className="h-24 w-px bg-gray-300 mx-4"></div>
                 <Image
-                    src="Post-Leaderboard/assets/lite-logo.png"
+                    src="/Post-Leaderboard/assets/lite-logo.png"
                     alt="lite-logo"
                     width={120}
                     height={100}
