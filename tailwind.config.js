@@ -9,6 +9,9 @@ module.exports = {
     ],
     theme: {
         extend: {
+            fontFamily: {
+                khand: ["var(--font-khand)"],
+            },
             colors: {
                 background: "var(--background)",
                 foreground: "var(--foreground)",

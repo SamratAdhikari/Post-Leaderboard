@@ -3,6 +3,9 @@
 import Typewriter from "typewriter-effect";
 import CardWidget from "./components/CardWidget/CardWidget";
 import { useEffect, useState } from "react";
+import Header from "./components/Header/Header";
+import Subheader from "./components/Subheader/Subheader";
+import Footer from "./components/Footer/Footer";
 
 export default function Home() {
     const [posts, setPosts] = useState([]);
@@ -29,29 +32,11 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="flex flex-col justify-center items-center min-h-screen sm:px-8 font-[family-name:var(--font-geist-sans)] gap-12">
+        <div className="relative flex flex-col justify-between items-center w-full min-h-screen font-[family-name:var(--font-geist-sans)]">
             {/* Title Section */}
-            <div className="w-full text-center sm:mb-12 mt-12 top-0 left-0">
-                <h1 className="lg:text-4xl md:text-4xl text-2xl font-bold text-primary">
-                    <Typewriter
-                        onInit={(typewriter) => {
-                            typewriter
-                                .typeString("AI PHOTOGRAPHY")
-                                .pauseFor(1000)
-                                .deleteAll()
-                                .typeString("LEADERBOARD")
-                                .pauseFor(1000)
-                                .deleteAll()
-                                .typeString("#KECLITE2081")
-                                .pauseFor(1000)
-                                .deleteAll()
-                                .start();
-                        }}
-                        options={{
-                            loop: true,
-                        }}
-                    />
-                </h1>
+            <div className="relative w-full h-auto text-center sm:mb-12 top-0 left-0 m-4 flex flex-wrap flex-col justify-center items-center">
+                <Header />
+                <Subheader />
             </div>
 
             {/* Cards Section */}
@@ -60,7 +45,7 @@ export default function Home() {
                     ? posts.map((post, index) => (
                           <CardWidget key={index} {...post} rank={index + 1} />
                       ))
-                    : [1, 2, 3].map((_, index) => (
+                    : [1, 2, 3, 4, 5, 6].map((_, index) => (
                           <div
                               key={index}
                               className="w-full m-8 sm:w-[300px] md:w-[350px] lg:w-[400px] bg-slate-200 rounded-lg h-[480px] animate-pulse"
@@ -74,6 +59,11 @@ export default function Home() {
                               </div>
                           </div>
                       ))}
+            </div>
+
+            {/* Footer section */}
+            <div className="w-full text-center mt-8">
+                <Footer />
             </div>
         </div>
     );

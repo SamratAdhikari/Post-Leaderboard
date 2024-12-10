@@ -1,7 +1,7 @@
 const CardStats = ({ icon, count, color }) => {
     return (
         <span
-            className="inline-flex gap-1 items-center text-lg"
+            className="inline-flex gap-1 items-center text-base"
             style={{ color }}
         >
             {icon} {count}

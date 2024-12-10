@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import { Khand } from "next/font/google";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -12,6 +13,12 @@ const geistMono = localFont({
     weight: "100 900",
 });
 
+const khand = Khand({
+    subsets: ["latin"],
+    variable: "--font-khand",
+    weight: ["400"],
+});
+
 export const metadata = {
     title: "Post Progress Tracker",
     description: "AI Photography Post Engagement Tracker",
@@ -21,7 +28,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                className={`${geistSans.variable} ${geistMono.variable} ${khand.variable} antialiased`}
             >
                 {children}
             </body>
