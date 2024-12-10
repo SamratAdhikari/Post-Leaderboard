@@ -8,7 +8,7 @@ const Footer = () => {
                     <Info />
                 </span>
                 Don&apos;t forget to visit the
-                <span className="font-bold mx-2">KEC LITE 2081</span>
+                <span className="font-semibold mx-2">KEC LITE 2081</span>
                 Facebook page for updates and announcements!
             </div>
 
