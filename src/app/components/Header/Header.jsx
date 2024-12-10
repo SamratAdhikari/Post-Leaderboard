@@ -5,7 +5,7 @@ const Header = () => {
         <div className="w-full h-auto flex flex-col justify-center items-center mb-4">
             <div className="w-full h-36 flex justify-center items-center">
                 <Image
-                    src="Post-Leaderboard/assets/kec-logo.png"
+                    src="/Post-Leaderboard/assets/kec-logo.png"
                     alt="kec-logo"
                     width={100}
                     height={100}
